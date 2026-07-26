@@ -1,39 +1,89 @@
-# Generic / IDE
+# ============================================================
+# IDE & OS
+# ============================================================
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 *.log
+*.swp
+
+# ============================================================
+# Environment
+# ============================================================
 .env
 .env.backup
 .env.production
-.packages
+.env.local
+.env.*.local
 
-# --- Santrix (Laravel) ---
+# ============================================================
+# Santrix — Laravel Backend
+# ============================================================
 santrix/auth.json
 santrix/node_modules/
-santrix/public/build/
-santrix/public/hot/
-santrix/public/storage
-santrix/storage/*.key
-santrix/storage/pail
 santrix/vendor/
+
+# Build & cache
+santrix/public/build/
+santrix/public/hot
+santrix/public/storage
+
+# Storage runtime (keep folder structure via .gitignore inside)
+santrix/storage/*.key
+santrix/storage/pail/
+santrix/storage/framework/views/
+santrix/storage/framework/cache/
+santrix/storage/framework/sessions/
+santrix/storage/framework/testing/
+santrix/storage/logs/
+
+# Lock files (pnpm dipakai, npm tidak)
+santrix/package-lock.json
+santrix/yarn.lock
+
+# pnpm workspace
+santrix/pnpm-lock.yaml
+santrix/pnpm-workspace.yaml
+
+# Laravel IDE helper (generated)
+santrix/_ide_helper.php
+santrix/_ide_helper_models.php
+santrix/.phpstorm.meta.php
+
+# Compiled binary (Tauri embed di dalam Laravel)
+santrix/santrix
+
+# Homestead / Vagrant
 santrix/Homestead.json
 santrix/Homestead.yaml
+.vagrant/
 
-# --- Santrix Launcher (Tauri) ---
+# ============================================================
+# Santrix Launcher — Tauri Desktop
+# ============================================================
 santrix-launcher/node_modules/
 santrix-launcher/src-tauri/target/
 santrix-launcher/dist/
+santrix-launcher/package-lock.json
+santrix-launcher/yarn.lock
 
-# --- Santrix Mobile (Flutter) ---
+# ============================================================
+# Santrix Mobile — Flutter
+# ============================================================
 santrix-mobile/build/
 santrix-mobile/.dart_tool/
 santrix-mobile/.flutter-plugins
+santrix-mobile/.flutter-plugins-dependencies
 santrix-mobile/.packages
 santrix-mobile/.pub-cache/
 santrix-mobile/.pub/
-santrix-mobile/android/.gradle
+santrix-mobile/android/.gradle/
 santrix-mobile/android/local.properties
+santrix-mobile/android/app/debug/
+santrix-mobile/android/app/profile/
+santrix-mobile/android/key.properties
 santrix-mobile/ios/Flutter/Generated.xcconfig
 santrix-mobile/ios/Flutter/flutter_export_environment.sh
+santrix-mobile/ios/Pods/
+santrix-mobile/macos/Pods/
