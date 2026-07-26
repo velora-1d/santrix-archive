@@ -40,12 +40,11 @@ class UserSeeder extends Seeder
                 'role' => 'bendahara',
             ],
             [
-                'name' => 'Owner Santrix',
-                'email' => 'nawawimahinutsman@gmail.com',
-                'password' => Hash::make('OwnerSantrix200601'),
-                // 'role' => 'owner', // Role manually handled or enum updated
-                'role' => 'owner',
-                'pesantren_id' => null, 
+                'name'         => 'Owner Santrix',
+                'email'        => env('OWNER_EMAIL', 'owner@santrix.com'),
+                'password'     => Hash::make(env('OWNER_PASSWORD', 'changeme123')),
+                'role'         => 'owner',
+                'pesantren_id' => null,
             ],
         ];
 
@@ -57,6 +56,7 @@ class UserSeeder extends Seeder
         }
 
         $this->command->info('✅ Default users created successfully!');
+        $this->command->info('📧 Lihat kredensial di file .env (OWNER_EMAIL, OWNER_PASSWORD)');
         $this->command->info('📧 Email: admin@santrix.com | Password: password');
         $this->command->info('📧 Email: pendidikan@santrix.com | Password: password');
         $this->command->info('📧 Email: sekretaris@santrix.com | Password: password');

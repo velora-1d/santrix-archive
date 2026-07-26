@@ -79,13 +79,8 @@ composer run dev
 
 ### Akun Default (Setelah Seed)
 
-| Role | Email | Password |
-|------|-------|----------|
-| Owner | `nawawimahinutsman@gmail.com` | `OwnerSantrix200601` |
-| Admin | `admin@santrix.com` | `password` |
-| Bendahara | `bendahara@santrix.com` | `password` |
-| Sekretaris | `sekretaris@santrix.com` | `password` |
-| Pendidikan | `pendidikan@santrix.com` | `password` |
+Akun dev tersedia setelah menjalankan `php artisan migrate --seed`.
+Lihat detail di `santrix/database/seeders/UserSeeder.php` (jangan di-share publik).
 
 ### Arsitektur Multi-Tenant (Production)
 
