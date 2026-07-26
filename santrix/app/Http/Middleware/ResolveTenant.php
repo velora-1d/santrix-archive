@@ -20,7 +20,7 @@ class ResolveTenant
         $host = $request->getHost();
         $normalizedHost = str_replace(['http://', 'https://'], '', $host);
         
-        $centralDomains = config('tenancy.central_domains', ['santrix.my.id', 'santrix.test', 'localhost']);
+        $centralDomains = config('tenancy.central_domains', ['santrix.my.id', 'santrix.test', 'localhost', '127.0.0.1']);
         // Also skip owner subdomain
         $isOwnerSubdomain = str_starts_with($normalizedHost, 'owner.');
         

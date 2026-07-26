@@ -111,7 +111,12 @@
             <button type="submit">Verifikasi & Masuk</button>
         </form>
 
-        <form action="{{ route('logout') }}" method="POST" style="margin-top: 1rem;">
+        @php
+            $logoutUrl = app()->has('CurrentTenant')
+                ? route('tenant.logout')
+                : (Route::has('owner.logout') ? route('owner.logout') : url('/logout'));
+        @endphp
+        <form action="{{ $logoutUrl }}" method="POST" style="margin-top: 1rem;">
             @csrf
             <button type="submit" style="background: transparent; color: #94a3b8; font-weight: normal; font-size: 0.875rem;">Login akun lain</button>
         </form>
